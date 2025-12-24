@@ -37,6 +37,7 @@ A curated list of Kafka Connect connectors.
   - [Databricks](#databricks)
   - [Azure Data Explorer (Kusto)](#azure-data-explorer-kusto)
   - [Apache Pinot](#apache-pinot)
+  - [Apache Druid](#apache-druid)
 - [Open Table Formats (Lakehouse)](#open-table-formats-lakehouse)
   - [Apache Iceberg](#apache-iceberg)
   - [Apache Hudi](#apache-hudi)
@@ -64,6 +65,7 @@ A curated list of Kafka Connect connectors.
   - [MQTT](#mqtt)
   - [Amazon SQS](#amazon-sqs)
   - [Amazon Kinesis](#amazon-kinesis)
+  - [Amazon EventBridge](#amazon-eventbridge)
   - [NATS](#nats)
   - [Google Pub/Sub](#google-pubsub)
   - [Azure Event Hubs](#azure-event-hubs)
@@ -91,6 +93,7 @@ A curated list of Kafka Connect connectors.
   - [Marketo](#marketo)
 - [Developer Tools](#developer-tools)
   - [GitLab](#gitlab)
+  - [GitHub](#github)
   - [Jira](#jira)
 - [Enterprise Systems](#enterprise-systems)
   - [SAP](#sap)
@@ -103,6 +106,9 @@ A curated list of Kafka Connect connectors.
 - [Blockchain](#blockchain)
 - [Data Formats & Transformations](#data-formats--transformations)
 - [Data Generators & Testing](#data-generators--testing)
+- [Real-Time Data Platforms](#real-time-data-platforms)
+  - [Diffusion](#diffusion)
+  - [Kafka-to-Kafka Replication](#kafka-to-kafka-replication)
 - [Multi-Connector Packages](#multi-connector-packages)
   - [Lenses Stream Reactor](#lenses-stream-reactor)
   - [Aiven Open Source](#aiven-open-source)
@@ -167,6 +173,10 @@ A curated list of Kafka Connect connectors.
 
 - [scylladb/kafka-connect-scylladb](https://github.com/scylladb/kafka-connect-scylladb) - Scylla-optimized sink connector
 
+### Aerospike
+
+- [jcustenborder/kafka-connect-aerospike](https://github.com/jcustenborder/kafka-connect-aerospike) - Aerospike source and sink connector
+
 ### ArangoDB
 
 - [jaredpetersen/kafka-connect-arangodb](https://github.com/jaredpetersen/kafka-connect-arangodb) - Kafka Connect sink connector for ArangoDB
@@ -182,10 +192,11 @@ A curated list of Kafka Connect connectors.
 ### DynamoDB
 
 - [Confluent DynamoDB Sink](https://www.confluent.io/hub/confluentinc/kafka-connect-dynamodb) - Confluent DynamoDB sink connector (commercial)
+- [trustpilot/kafka-connect-dynamodb](https://github.com/trustpilot/kafka-connect-dynamodb) - Open source DynamoDB sink connector
 
 ### Aerospike
 
-- [jcustenborder/kafka-connect-aerospike](https://github.com/jcustenborder/kafka-connect-aerospike) - Aerospike sink connector for key-value store integration
+- [jcustenborder/kafka-connect-aerospike](https://github.com/jcustenborder/kafka-connect-aerospike) - Aerospike source and sink connector
 
 ---
 
@@ -257,6 +268,10 @@ A curated list of Kafka Connect connectors.
 ### Apache Pinot
 
 - [mhomaid/kafka-connect-apache-pinot](https://github.com/mhomaid/kafka-connect-apache-pinot) - Community sink connector for Apache Pinot
+
+### Apache Druid
+
+- [gianm/kafka-connect-druid](https://github.com/gianm/kafka-connect-druid) - Early-stage Apache Druid sink connector
 
 ---
 
@@ -435,6 +450,7 @@ A curated list of Kafka Connect connectors.
 - [llofberg/kafka-connect-rest](https://github.com/llofberg/kafka-connect-rest) - REST source and sink connector
 - [asaintsever/kafka-connect-http-sink](https://github.com/asaintsever/kafka-connect-http-sink) - HTTP sink connector
 - [thomaskwscott/kafka-connect-http](https://github.com/thomaskwscott/kafka-connect-http) - HTTP sink connector with regex transformations
+- [axual/http-sink-connector](https://gitlab.com/axual/public/connect-plugins/http-sink-connector) - Axual HTTP sink connector (GitLab)
 - Confluent HTTP source and sink connectors (commercial)
 
 ---
@@ -507,6 +523,10 @@ A curated list of Kafka Connect connectors.
 ### GitLab
 
 - [sami12rom/kafka-connect-gitlab](https://github.com/sami12rom/kafka-connect-gitlab) - GitLab source connector built with Kotlin
+
+### GitHub
+
+- [simplesteph/kafka-connect-github-source](https://github.com/simplesteph/kafka-connect-github-source) - GitHub events source connector
 
 ### Jira
 
@@ -582,6 +602,19 @@ A curated list of Kafka Connect connectors.
 - [sasakitoa/kafka-connect-random](https://github.com/sasakitoa/kafka-connect-random) - Simple random value source connector
 - [simplesteph/kafka-connect-github-source](https://github.com/simplesteph/kafka-connect-github-source) - GitHub issues and pull requests source connector
 - [conduktor/kafka-connect-wikimedia](https://github.com/conduktor/kafka-connect-wikimedia) - Wikimedia recent changes stream source connector
+
+---
+
+## Real-Time Data Platforms
+
+### Diffusion
+
+- [pushtechnology/diffusion-kafka-connect](https://github.com/pushtechnology/diffusion-kafka-connect) - Push Technology Diffusion source and sink for real-time streaming to web, mobile, and IoT edge clients
+
+### Kafka-to-Kafka Replication
+
+- [axual/kafka-synchronisation-connectors](https://gitlab.com/axual/public/connect-plugins/kafka-synchronisation-connectors) - Source and sink connectors for cross-cluster Kafka replication (GitLab)
+- [kakao/kafka-sink-connector](https://github.com/kakao/kafka-sink-connector) - Kafka-to-Kafka sink with JsonPath filtering and sampling
 
 ---
 
