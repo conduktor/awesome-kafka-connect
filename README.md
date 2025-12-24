@@ -149,6 +149,7 @@ A curated list of Kafka Connect connectors.
   - [Telegram](#telegram)
   - [Twitter](#twitter)
   - [Twilio](#twilio)
+  - [Reddit](#reddit)
 - [Email](#email)
 - [IoT](#iot)
 - [Voice & Telephony](#voice--telephony)
@@ -826,6 +827,10 @@ A curated list of Kafka Connect connectors.
 ### Twilio
 
 - [cloudstark/kafka-connect-twilio](https://github.com/cloudstark/kafka-connect-twilio) - Twilio SMS sink connector
+
+### Reddit
+
+- [C0urante/kafka-connect-reddit](https://github.com/C0urante/kafka-connect-reddit) - Reddit source connector streaming posts and comments from subreddits
 
 ---
 
