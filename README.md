@@ -1,6 +1,6 @@
 # Awesome Kafka Connect
 
-A curated list of Kafka Connect connectors, tools, and resources.
+A curated list of Kafka Connect connectors.
 
 ## Contents
 
@@ -88,7 +88,6 @@ A curated list of Kafka Connect connectors, tools, and resources.
 - [Multi-Connector Packages](#multi-connector-packages)
   - [Lenses Stream Reactor](#lenses-stream-reactor)
   - [Aiven Open Source](#aiven-open-source)
-- [Tools & Utilities](#tools--utilities)
 
 ---
 
@@ -483,17 +482,6 @@ A curated list of Kafka Connect connectors, tools, and resources.
 ### Aiven Open Source
 
 - [Aiven-Open](https://github.com/Aiven-Open) - Open source connectors for BigQuery, cloud storage (S3/GCS/Azure), Elasticsearch, HTTP, JDBC, OpenSearch, plus SMTs and Kafka tools
-
----
-
-## Tools & Utilities
-
-- [Conduktor Console](https://conduktor.io) - Complete Kafka Connect management UI
-- [kafka-connect-ui](https://github.com/lensesio/kafka-connect-ui) - Lenses Kafka Connect UI
-- [Kafdrop](https://github.com/obsidiandynamics/kafdrop) - Kafka web UI with Connect support
-- [akhq](https://github.com/tchiotludo/akhq) - Kafka HQ with Kafka Connect management
-- [strimzi/strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) - Kubernetes operator with Kafka Connect support
-- [confluentinc/kafka-connect-datagen](https://github.com/confluentinc/kafka-connect-datagen) - Generate sample data for testing
 
 ---
 
