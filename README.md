@@ -11,6 +11,8 @@ A curated list of Kafka Connect connectors.
   - [MongoDB](#mongodb)
   - [Cassandra](#cassandra)
   - [Neo4j](#neo4j)
+  - [TigerGraph](#tigergraph)
+  - [JanusGraph](#janusgraph)
   - [ClickHouse](#clickhouse)
   - [CockroachDB](#cockroachdb)
   - [SingleStore (MemSQL)](#singlestore-memsql)
@@ -23,7 +25,8 @@ A curated list of Kafka Connect connectors.
   - [OrientDB](#orientdb)
   - [HBase](#hbase)
   - [DynamoDB](#dynamodb)
-  - [Aerospike](#aerospike)
+  - [YugabyteDB](#yugabytedb)
+  - [Apache Kudu](#apache-kudu)
 - [Change Data Capture (CDC)](#change-data-capture-cdc)
 - [Cloud Storage](#cloud-storage)
   - [Amazon S3](#amazon-s3)
@@ -38,6 +41,11 @@ A curated list of Kafka Connect connectors.
   - [Azure Data Explorer (Kusto)](#azure-data-explorer-kusto)
   - [Apache Pinot](#apache-pinot)
   - [Apache Druid](#apache-druid)
+  - [StarRocks](#starrocks)
+  - [Apache Doris](#apache-doris)
+  - [Databend](#databend)
+  - [Teradata](#teradata)
+  - [Vertica](#vertica)
 - [Open Table Formats (Lakehouse)](#open-table-formats-lakehouse)
   - [Apache Iceberg](#apache-iceberg)
   - [Apache Hudi](#apache-hudi)
@@ -82,10 +90,14 @@ A curated list of Kafka Connect connectors.
   - [New Relic](#new-relic)
   - [PagerDuty](#pagerduty)
   - [Syslog](#syslog)
+  - [Grafana Loki](#grafana-loki)
+  - [OpenTelemetry](#opentelemetry)
 - [Caching](#caching)
   - [Redis](#redis)
   - [Hazelcast](#hazelcast)
   - [Apache Geode](#apache-geode)
+  - [Memcached](#memcached)
+  - [Apache Ignite](#apache-ignite)
 - [CRM & Marketing](#crm--marketing)
   - [Salesforce](#salesforce)
   - [ServiceNow](#servicenow)
@@ -100,6 +112,7 @@ A curated list of Kafka Connect connectors.
   - [Oracle](#oracle)
 - [Social Media](#social-media)
   - [Slack](#slack)
+  - [Telegram](#telegram)
   - [Twitter](#twitter)
 - [Email](#email)
 - [IoT](#iot)
@@ -109,11 +122,16 @@ A curated list of Kafka Connect connectors.
 - [Real-Time Data Platforms](#real-time-data-platforms)
   - [Diffusion](#diffusion)
   - [Kafka-to-Kafka Replication](#kafka-to-kafka-replication)
+- [Healthcare (HL7/FHIR)](#healthcare-hl7fhir)
+- [GIS & Geospatial](#gis--geospatial)
+- [Machine Learning & Feature Stores](#machine-learning--feature-stores)
+- [Data Catalogs](#data-catalogs)
 - [Multi-Connector Packages](#multi-connector-packages)
   - [Lenses Stream Reactor](#lenses-stream-reactor)
   - [Aiven Open Source](#aiven-open-source)
   - [Apache Camel](#apache-camel)
   - [Camunda Zeebe](#camunda-zeebe)
+  - [Redpanda Connect](#redpanda-connect)
 
 ---
 
@@ -140,6 +158,14 @@ A curated list of Kafka Connect connectors.
 ### Neo4j
 
 - [neo4j-contrib/neo4j-streams](https://github.com/neo4j-contrib/neo4j-streams) - Neo4j Kafka Streams integration with Kafka Connect sink
+
+### TigerGraph
+
+- [tigergraph/ecosys](https://github.com/tigergraph/ecosys) - TigerGraph Kafka Connect connector (in tools/etl/tg-kafka-connect)
+
+### JanusGraph
+
+- [rayokota/janusgraph-kafka](https://github.com/rayokota/janusgraph-kafka) - Kafka storage adapter for JanusGraph graph database
 
 ### ClickHouse
 
@@ -194,9 +220,15 @@ A curated list of Kafka Connect connectors.
 - [Confluent DynamoDB Sink](https://www.confluent.io/hub/confluentinc/kafka-connect-dynamodb) - Confluent DynamoDB sink connector (commercial)
 - [trustpilot/kafka-connect-dynamodb](https://github.com/trustpilot/kafka-connect-dynamodb) - Open source DynamoDB sink connector
 
-### Aerospike
+### YugabyteDB
 
-- [jcustenborder/kafka-connect-aerospike](https://github.com/jcustenborder/kafka-connect-aerospike) - Aerospike source and sink connector
+- [yugabyte/yb-kafka-connector](https://github.com/yugabyte/yb-kafka-connector) - YugabyteDB Kafka Connect sink connector
+- [yugabyte/debezium-connector-yugabytedb](https://github.com/yugabyte/debezium-connector-yugabytedb) - Debezium CDC source connector for YugabyteDB
+
+### Apache Kudu
+
+- [onfocusio/kafka-connect-kudu](https://github.com/onfocusio/kafka-connect-kudu) - Apache Kudu sink connector
+- [lensesio/stream-reactor](https://github.com/lensesio/stream-reactor) - Kudu sink connector (part of Stream Reactor)
 
 ---
 
@@ -272,6 +304,26 @@ A curated list of Kafka Connect connectors.
 ### Apache Druid
 
 - [gianm/kafka-connect-druid](https://github.com/gianm/kafka-connect-druid) - Early-stage Apache Druid sink connector
+
+### StarRocks
+
+- [StarRocks/starrocks-connector-for-kafka](https://github.com/StarRocks/starrocks-connector-for-kafka) - Official StarRocks Kafka Connect sink connector
+
+### Apache Doris
+
+- [apache/doris-kafka-connector](https://github.com/apache/doris-kafka-connector) - Official Apache Doris Kafka Connect sink connector
+
+### Databend
+
+- [databendcloud/databend-kafka-connect](https://github.com/databendcloud/databend-kafka-connect) - Databend Kafka Connect sink connector
+
+### Teradata
+
+- Confluent Teradata connector (commercial) - JDBC-based source and sink
+
+### Vertica
+
+- Confluent Vertica connector (commercial)
 
 ---
 
@@ -451,6 +503,9 @@ A curated list of Kafka Connect connectors.
 - [asaintsever/kafka-connect-http-sink](https://github.com/asaintsever/kafka-connect-http-sink) - HTTP sink connector
 - [thomaskwscott/kafka-connect-http](https://github.com/thomaskwscott/kafka-connect-http) - HTTP sink connector with regex transformations
 - [axual/http-sink-connector](https://gitlab.com/axual/public/connect-plugins/http-sink-connector) - Axual HTTP sink connector (GitLab)
+- [Platformatory/webhook-source-connector](https://github.com/Platformatory/webhook-source-connector) - Webhook source connector with Netty HTTP server
+- [jcustenborder/kafka-connect-servlet](https://github.com/jcustenborder/kafka-connect-servlet) - Framework for building webhook-based connectors with embedded Jetty
+- [jcustenborder/kafka-connect-github-webhook](https://github.com/jcustenborder/kafka-connect-github-webhook) - GitHub webhook source connector
 - Confluent HTTP source and sink connectors (commercial)
 
 ---
@@ -477,6 +532,14 @@ A curated list of Kafka Connect connectors.
 
 - [jcustenborder/kafka-connect-syslog](https://github.com/jcustenborder/kafka-connect-syslog) - Syslog source connector
 
+### Grafana Loki
+
+- [jeschkies/kafka-connect-loki](https://github.com/jeschkies/kafka-connect-loki) - Loki sink connector for log aggregation
+
+### OpenTelemetry
+
+- [conduktor/kafka-connect-opentelemetry](https://github.com/conduktor/kafka-connect-opentelemetry) - Source connector ingesting OTLP traces/metrics/logs into Kafka
+
 ---
 
 ## Caching
@@ -493,6 +556,14 @@ A curated list of Kafka Connect connectors.
 ### Apache Geode
 
 - [apache/geode-kafka-connector](https://github.com/apache/geode-kafka-connector) - Apache Geode sink and source connector
+
+### Memcached
+
+- [jcustenborder/kafka-connect-memcached](https://github.com/jcustenborder/kafka-connect-memcached) - Memcached sink connector
+
+### Apache Ignite
+
+- Apache Ignite includes IgniteSinkConnector for streaming data from Kafka to Ignite caches
 
 ---
 
@@ -538,7 +609,8 @@ A curated list of Kafka Connect connectors.
 
 ### SAP
 
-- SAP Kafka Connect adapters (commercial)
+- [SAP/kafka-connect-sap](https://github.com/SAP/kafka-connect-sap) - Official SAP HANA source and sink connector
+- [santi81/kafka-connect-hana](https://github.com/santi81/kafka-connect-hana) - Alternative SAP HANA source and sink connector
 
 ### Oracle
 
@@ -551,6 +623,10 @@ A curated list of Kafka Connect connectors.
 ### Slack
 
 - [Mongey/kafka-connect-slack](https://github.com/Mongey/kafka-connect-slack) - Slack sink connector for posting messages
+
+### Telegram
+
+- [fbascheper/kafka-connect-telegram](https://github.com/fbascheper/kafka-connect-telegram) - Telegram source and sink connector
 
 ### Twitter
 
@@ -618,6 +694,36 @@ A curated list of Kafka Connect connectors.
 
 ---
 
+## Healthcare (HL7/FHIR)
+
+- [jcustenborder/kafka-connect-transform-hl7](https://github.com/jcustenborder/kafka-connect-transform-hl7) - Transform for reading HL7 healthcare message structures
+- [UMEssen/Volcano-HL7-MLLP-Connector](https://github.com/UMEssen) - High-performance HL7 v2 MLLP listener to Kafka (Scala)
+- Apache Camel FHIR Kafka Connector via camel-kafka-connector
+
+---
+
+## GIS & Geospatial
+
+- [planetfederal/kafka-geoserver-plugin](https://github.com/planetfederal/kafka-geoserver-plugin) - GeoServer plugin sending WFS-T transactions to Kafka
+- [52North/postgis-kafka-cdc](https://github.com/52North/postgis-kafka-cdc) - PostGIS CDC with Debezium (experimental)
+- Debezium PostgreSQL connector supports PostGIS data types natively
+
+---
+
+## Machine Learning & Feature Stores
+
+- [dwarszawski/kafka-connect-mlflow](https://github.com/dwarszawski/kafka-connect-mlflow) - MLflow Model Registry change tracking source connector
+- Feast (Feature Store) integrates with Kafka for real-time feature ingestion
+
+---
+
+## Data Catalogs
+
+- [jhollandus/kafka-atlas](https://github.com/jhollandus/kafka-atlas) - POC for integrating Kafka Connect and Schema Registry with Apache Atlas
+- DataHub ingests Kafka Connect metadata for lineage tracking
+
+---
+
 ## Multi-Connector Packages
 
 ### Lenses Stream Reactor
@@ -635,6 +741,10 @@ A curated list of Kafka Connect connectors.
 ### Camunda Zeebe
 
 - [camunda-community-hub/kafka-connect-zeebe](https://github.com/camunda-community-hub/kafka-connect-zeebe) - Zeebe source and sink connectors for workflow automation with Camunda
+
+### Redpanda Connect
+
+- [redpanda-data/connect](https://github.com/redpanda-data/connect) - Benthos-based declarative connectors for 200+ sources/sinks (Kafka compatible)
 
 ---
 
