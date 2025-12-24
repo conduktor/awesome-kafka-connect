@@ -15,10 +15,15 @@ A curated list of Kafka Connect connectors.
   - [CockroachDB](#cockroachdb)
   - [SingleStore (MemSQL)](#singlestore-memsql)
   - [Couchbase](#couchbase)
+  - [CouchDB](#couchdb)
+  - [Azure Cosmos DB](#azure-cosmos-db)
   - [MarkLogic](#marklogic)
+  - [ScyllaDB](#scylladb)
   - [ArangoDB](#arangodb)
   - [OrientDB](#orientdb)
   - [HBase](#hbase)
+  - [DynamoDB](#dynamodb)
+  - [Aerospike](#aerospike)
 - [Change Data Capture (CDC)](#change-data-capture-cdc)
 - [Cloud Storage](#cloud-storage)
   - [Amazon S3](#amazon-s3)
@@ -30,6 +35,8 @@ A curated list of Kafka Connect connectors.
   - [BigQuery](#bigquery)
   - [Redshift](#redshift)
   - [Databricks](#databricks)
+  - [Azure Data Explorer (Kusto)](#azure-data-explorer-kusto)
+  - [Apache Pinot](#apache-pinot)
 - [Open Table Formats (Lakehouse)](#open-table-formats-lakehouse)
   - [Apache Iceberg](#apache-iceberg)
   - [Apache Hudi](#apache-hudi)
@@ -43,6 +50,7 @@ A curated list of Kafka Connect connectors.
   - [Milvus](#milvus)
   - [Weaviate](#weaviate)
   - [Pinecone](#pinecone)
+  - [Qdrant](#qdrant)
 - [Time-Series Databases](#time-series-databases)
   - [InfluxDB](#influxdb)
   - [TimescaleDB](#timescaledb)
@@ -55,6 +63,8 @@ A curated list of Kafka Connect connectors.
   - [JMS (Generic)](#jms-generic)
   - [MQTT](#mqtt)
   - [Amazon SQS](#amazon-sqs)
+  - [Amazon Kinesis](#amazon-kinesis)
+  - [NATS](#nats)
   - [Google Pub/Sub](#google-pubsub)
   - [Azure Event Hubs](#azure-event-hubs)
   - [Solace PubSub+](#solace-pubsub)
@@ -73,15 +83,20 @@ A curated list of Kafka Connect connectors.
 - [Caching](#caching)
   - [Redis](#redis)
   - [Hazelcast](#hazelcast)
+  - [Apache Geode](#apache-geode)
 - [CRM & Marketing](#crm--marketing)
   - [Salesforce](#salesforce)
   - [ServiceNow](#servicenow)
   - [Zendesk](#zendesk)
   - [Marketo](#marketo)
+- [Developer Tools](#developer-tools)
+  - [GitLab](#gitlab)
+  - [Jira](#jira)
 - [Enterprise Systems](#enterprise-systems)
   - [SAP](#sap)
   - [Oracle](#oracle)
 - [Social Media](#social-media)
+  - [Slack](#slack)
   - [Twitter](#twitter)
 - [Email](#email)
 - [IoT](#iot)
@@ -91,6 +106,8 @@ A curated list of Kafka Connect connectors.
 - [Multi-Connector Packages](#multi-connector-packages)
   - [Lenses Stream Reactor](#lenses-stream-reactor)
   - [Aiven Open Source](#aiven-open-source)
+  - [Apache Camel](#apache-camel)
+  - [Camunda Zeebe](#camunda-zeebe)
 
 ---
 
@@ -106,6 +123,8 @@ A curated list of Kafka Connect connectors.
 
 - [mongodb/mongo-kafka](https://github.com/mongodb/mongo-kafka) - Official MongoDB Kafka Connector (source and sink)
 - [hpgrahsl/kafka-connect-mongodb](https://github.com/hpgrahsl/kafka-connect-mongodb) - Community MongoDB sink connector
+- [DataReply/kafka-connect-mongodb](https://github.com/DataReply/kafka-connect-mongodb) - MongoDB source and sink using oplog
+- [teambition/kafka-connect-mongo](https://github.com/teambition/kafka-connect-mongo) - MongoDB source with Schema Registry support (archived)
 
 ### Cassandra
 
@@ -132,9 +151,21 @@ A curated list of Kafka Connect connectors.
 
 - [couchbase/kafka-connect-couchbase](https://github.com/couchbase/kafka-connect-couchbase) - Official Couchbase Kafka Connector (source and sink)
 
+### CouchDB
+
+- [xebia/kafka-connect-couchdb](https://github.com/xebia/kafka-connect-couchdb) - CouchDB / IBM Cloudant sink connector
+
+### Azure Cosmos DB
+
+- [microsoft/kafka-connect-cosmosdb](https://github.com/microsoft/kafka-connect-cosmosdb) - Azure Cosmos DB sink connector for SQL API
+
 ### MarkLogic
 
 - [marklogic-community/kafka-marklogic-connector](https://github.com/marklogic-community/kafka-marklogic-connector) - MarkLogic Kafka Connector
+
+### ScyllaDB
+
+- [scylladb/kafka-connect-scylladb](https://github.com/scylladb/kafka-connect-scylladb) - Scylla-optimized sink connector
 
 ### ArangoDB
 
@@ -148,6 +179,14 @@ A curated list of Kafka Connect connectors.
 
 - [lensesio/stream-reactor](https://github.com/lensesio/stream-reactor) - Includes HBase sink connector
 
+### DynamoDB
+
+- [Confluent DynamoDB Sink](https://www.confluent.io/hub/confluentinc/kafka-connect-dynamodb) - Confluent DynamoDB sink connector (commercial)
+
+### Aerospike
+
+- [jcustenborder/kafka-connect-aerospike](https://github.com/jcustenborder/kafka-connect-aerospike) - Aerospike sink connector for key-value store integration
+
 ---
 
 ## Change Data Capture (CDC)
@@ -156,6 +195,7 @@ A curated list of Kafka Connect connectors.
 - [zendesk/maxwell](https://github.com/zendesk/maxwell) - Maxwell's daemon for MySQL CDC to Kafka
 - [alibaba/canal](https://github.com/alibaba/canal) - Alibaba MySQL binlog incremental subscription & consumption
 - [confluentinc/kafka-connect-jdbc](https://github.com/confluentinc/kafka-connect-jdbc) - Query-based CDC using incrementing/timestamp columns
+- [thake/logminer-kafka-connect](https://github.com/thake/logminer-kafka-connect) - Oracle CDC using LogMiner (no GoldenGate required)
 
 ---
 
@@ -167,6 +207,7 @@ A curated list of Kafka Connect connectors.
 - [Aiven-Open/cloud-storage-connectors-for-apache-kafka](https://github.com/Aiven-Open/cloud-storage-connectors-for-apache-kafka) - Aiven's cloud storage connectors (S3, GCS, Azure)
 - [lensesio/stream-reactor](https://github.com/lensesio/stream-reactor) - AWS S3 source and sink connectors
 - [spredfast/kafka-connect-s3](https://github.com/spredfast/kafka-connect-s3) - Spredfast S3 sink connector
+- [wix-incubator/kafka-connect-s3](https://github.com/wix-incubator/kafka-connect-s3) - S3 sink with block-GZIP compression and index files
 
 ### Google Cloud Storage
 
@@ -197,6 +238,7 @@ A curated list of Kafka Connect connectors.
 - [Aiven-Open/bigquery-connector-for-apache-kafka](https://github.com/Aiven-Open/bigquery-connector-for-apache-kafka) - Aiven's BigQuery sink connector
 - [wepay/kafka-connect-bigquery](https://github.com/wepay/kafka-connect-bigquery) - WePay BigQuery sink connector
 - [confluentinc/kafka-connect-bigquery](https://www.confluent.io/hub/wepay/kafka-connect-bigquery) - Confluent Hub version
+- [nodefluent/bigquery-kafka-connect](https://github.com/nodefluent/bigquery-kafka-connect) - Node.js BigQuery source and sink connector
 
 ### Redshift
 
@@ -207,6 +249,14 @@ A curated list of Kafka Connect connectors.
 
 - [databricks/databricks-sql-connector](https://github.com/databricks/databricks-sql-connector) - Databricks SQL connector
 - Works with Delta Lake connector for direct lakehouse integration
+
+### Azure Data Explorer (Kusto)
+
+- [Azure/kafka-sink-azure-kusto](https://github.com/Azure/kafka-sink-azure-kusto) - Azure Data Explorer sink connector
+
+### Apache Pinot
+
+- [mhomaid/kafka-connect-apache-pinot](https://github.com/mhomaid/kafka-connect-apache-pinot) - Community sink connector for Apache Pinot
 
 ---
 
@@ -244,6 +294,7 @@ A curated list of Kafka Connect connectors.
 ### Solr
 
 - [lensesio/stream-reactor](https://github.com/lensesio/stream-reactor) - Solr sink connector
+- [jcustenborder/kafka-connect-solr](https://github.com/jcustenborder/kafka-connect-solr) - Solr sink connector with schemaless and cloud mode support
 
 ### Algolia
 
@@ -264,6 +315,10 @@ A curated list of Kafka Connect connectors.
 ### Pinecone
 
 - Pinecone Kafka Connect sink connector (commercial)
+
+### Qdrant
+
+- [qdrant/qdrant-kafka](https://github.com/qdrant/qdrant-kafka) - Qdrant vector database sink connector
 
 ---
 
@@ -298,6 +353,7 @@ A curated list of Kafka Connect connectors.
 ### RabbitMQ
 
 - [ibm-messaging/kafka-connect-rabbitmq-source](https://github.com/ibm-messaging/kafka-connect-rabbitmq-source) - IBM's RabbitMQ source connector
+- [jcustenborder/kafka-connect-rabbitmq](https://github.com/jcustenborder/kafka-connect-rabbitmq) - RabbitMQ source and sink connector
 - Confluent RabbitMQ source connector (commercial)
 
 ### ActiveMQ
@@ -312,6 +368,7 @@ A curated list of Kafka Connect connectors.
 ### MQTT
 
 - [lensesio/stream-reactor](https://github.com/lensesio/stream-reactor) - MQTT source connector
+- [evokly/kafka-connect-mqtt](https://github.com/evokly/kafka-connect-mqtt) - MQTT source connector using Eclipse Paho
 - Confluent MQTT source connector (commercial)
 - [hivemq/hivemq-kafka-extension](https://github.com/hivemq/hivemq-kafka-extension) - HiveMQ Enterprise Kafka Extension
 
@@ -319,6 +376,18 @@ A curated list of Kafka Connect connectors.
 
 - [nordstrom/kafka-connect-sqs](https://github.com/Nordstrom/kafka-connect-sqs) - Nordstrom's SQS source and sink connector
 - Confluent SQS source/sink connectors (commercial)
+
+### Amazon Kinesis
+
+- [awslabs/kinesis-kafka-connector](https://github.com/awslabs/kinesis-kafka-connector) - Sink connector for Kinesis Data Streams and Firehose
+
+### NATS
+
+- [oystparis/kafka-connect-nats](https://github.com/oystparis/kafka-connect-nats) - NATS source and sink connector
+
+### Amazon EventBridge
+
+- [aws/eventbridge-kafka-connector](https://github.com/aws/eventbridge-kafka-connector) - Sink connector for Amazon EventBridge with S3 offloading
 
 ### Google Pub/Sub
 
@@ -345,6 +414,7 @@ A curated list of Kafka Connect connectors.
 ### SpoolDir
 
 - [jcustenborder/kafka-connect-spooldir](https://github.com/jcustenborder/kafka-connect-spooldir) - Watch directories for CSV, JSON, binary files
+- [mmolimar/kafka-connect-fs](https://github.com/mmolimar/kafka-connect-fs) - FileSystem connector for local, HDFS, FTP, S3, GCS, Azure
 
 ### SFTP/FTP
 
@@ -361,6 +431,7 @@ A curated list of Kafka Connect connectors.
 ## HTTP & REST
 
 - [Aiven-Open/http-connector-for-apache-kafka](https://github.com/Aiven-Open/http-connector-for-apache-kafka) - Aiven's HTTP sink connector
+- [castorm/kafka-connect-http](https://github.com/castorm/kafka-connect-http) - HTTP source for Change Data Capture from JSON APIs
 - [llofberg/kafka-connect-rest](https://github.com/llofberg/kafka-connect-rest) - REST source and sink connector
 - [asaintsever/kafka-connect-http-sink](https://github.com/asaintsever/kafka-connect-http-sink) - HTTP sink connector
 - [thomaskwscott/kafka-connect-http](https://github.com/thomaskwscott/kafka-connect-http) - HTTP sink connector with regex transformations
@@ -403,6 +474,10 @@ A curated list of Kafka Connect connectors.
 
 - [hazelcast/hazelcast-jet-contrib](https://github.com/hazelcast/hazelcast-jet-contrib) - Hazelcast Jet connectors for Kafka
 
+### Apache Geode
+
+- [apache/geode-kafka-connector](https://github.com/apache/geode-kafka-connector) - Apache Geode sink and source connector
+
 ---
 
 ## CRM & Marketing
@@ -410,6 +485,7 @@ A curated list of Kafka Connect connectors.
 ### Salesforce
 
 - [jcustenborder/kafka-connect-salesforce](https://github.com/jcustenborder/kafka-connect-salesforce) - Salesforce streaming and push topics source
+- [nodefluent/salesforce-kafka-connect](https://github.com/nodefluent/salesforce-kafka-connect) - Node.js Salesforce source and sink connector
 - Confluent Salesforce connectors (commercial)
 
 ### ServiceNow
@@ -426,6 +502,18 @@ A curated list of Kafka Connect connectors.
 
 ---
 
+## Developer Tools
+
+### GitLab
+
+- [sami12rom/kafka-connect-gitlab](https://github.com/sami12rom/kafka-connect-gitlab) - GitLab source connector built with Kotlin
+
+### Jira
+
+- [algru/kafka-jira-source-connector](https://github.com/algru/kafka-jira-source-connector) - Jira REST API source connector
+
+---
+
 ## Enterprise Systems
 
 ### SAP
@@ -439,6 +527,10 @@ A curated list of Kafka Connect connectors.
 ---
 
 ## Social Media
+
+### Slack
+
+- [Mongey/kafka-connect-slack](https://github.com/Mongey/kafka-connect-slack) - Slack sink connector for posting messages
 
 ### Twitter
 
@@ -459,6 +551,7 @@ A curated list of Kafka Connect connectors.
 
 - [lensesio/stream-reactor](https://github.com/lensesio/stream-reactor) - MQTT source connector for IoT devices
 - [hivemq/hivemq-kafka-extension](https://github.com/hivemq/hivemq-kafka-extension) - MQTT broker to Kafka bridge
+- [jcustenborder/kafka-connect-snmp](https://github.com/jcustenborder/kafka-connect-snmp) - SNMP trap source connector for network device monitoring
 
 ---
 
@@ -472,6 +565,11 @@ A curated list of Kafka Connect connectors.
 
 - [Aiven-Open/transforms-for-apache-kafka-connect](https://github.com/Aiven-Open/transforms-for-apache-kafka-connect) - Aiven's collection of Single Message Transformations (SMTs)
 - [jcustenborder/kafka-connect-transform-common](https://github.com/jcustenborder/kafka-connect-transform-common) - Common transformations library
+- [jcustenborder/kafka-connect-transform-maxmind](https://github.com/jcustenborder/kafka-connect-transform-maxmind) - MaxMind GeoIP2 transform to enrich records with geolocation data
+- [jcustenborder/kafka-connect-transform-archive](https://github.com/jcustenborder/kafka-connect-transform-archive) - Transform to assist with archiving records to S3
+- [jcustenborder/kafka-connect-transform-xml](https://github.com/jcustenborder/kafka-connect-transform-xml) - Transform for converting XML data to structured data
+- [jcustenborder/kafka-connect-transform-fix](https://github.com/jcustenborder/kafka-connect-transform-fix) - Transform for reading FIX protocol messages
+- [jcustenborder/kafka-connect-opentsdb](https://github.com/jcustenborder/kafka-connect-opentsdb) - Transform for parsing OpenTSDB wire format and telnet API protocol
 - [confluentinc/connect-transforms](https://github.com/confluentinc/connect-transforms) - Confluent community SMTs
 
 ---
@@ -482,6 +580,8 @@ A curated list of Kafka Connect connectors.
 - [MichaelDrogalis/voluble](https://github.com/MichaelDrogalis/voluble) - Intelligent data generator with cross-topic relationships, tombstoning, and configurable rates
 - [awslabs/amazon-msk-data-generator](https://github.com/awslabs/amazon-msk-data-generator) - AWS MSK data generator (Java port of Voluble) with referential consistency
 - [sasakitoa/kafka-connect-random](https://github.com/sasakitoa/kafka-connect-random) - Simple random value source connector
+- [simplesteph/kafka-connect-github-source](https://github.com/simplesteph/kafka-connect-github-source) - GitHub issues and pull requests source connector
+- [conduktor/kafka-connect-wikimedia](https://github.com/conduktor/kafka-connect-wikimedia) - Wikimedia recent changes stream source connector
 
 ---
 
@@ -494,6 +594,14 @@ A curated list of Kafka Connect connectors.
 ### Aiven Open Source
 
 - [Aiven-Open](https://github.com/Aiven-Open) - Open source connectors for BigQuery, cloud storage (S3/GCS/Azure), Elasticsearch, HTTP, JDBC, OpenSearch, plus SMTs and Kafka tools
+
+### Apache Camel
+
+- [apache/camel-kafka-connector](https://github.com/apache/camel-kafka-connector) - 350+ connectors built on Apache Camel components, supporting AWS, Azure, GCP, databases, messaging systems, social media, and more
+
+### Camunda Zeebe
+
+- [camunda-community-hub/kafka-connect-zeebe](https://github.com/camunda-community-hub/kafka-connect-zeebe) - Zeebe source and sink connectors for workflow automation with Camunda
 
 ---
 
