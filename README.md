@@ -2,6 +2,8 @@
 
 A curated list of Kafka Connect connectors.
 
+> See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) - A comprehensive list of Apache Kafka resources, tools, and libraries
+
 ## Contents
 
 - [Databases](#databases)
