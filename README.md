@@ -481,9 +481,7 @@ A curated list of Kafka Connect connectors.
 - [confluentinc/kafka-connect-datagen](https://github.com/confluentinc/kafka-connect-datagen) - Confluent's datagen source connector for generating mock data with Avro schemas, JSON, or Protobuf
 - [MichaelDrogalis/voluble](https://github.com/MichaelDrogalis/voluble) - Intelligent data generator with cross-topic relationships, tombstoning, and configurable rates
 - [awslabs/amazon-msk-data-generator](https://github.com/awslabs/amazon-msk-data-generator) - AWS MSK data generator (Java port of Voluble) with referential consistency
-- [MaterializeInc/datagen](https://github.com/MaterializeInc/datagen) - Generate mock data from SQL, JSON, or Avro schemas to Kafka in JSON or Avro format
 - [sasakitoa/kafka-connect-random](https://github.com/sasakitoa/kafka-connect-random) - Simple random value source connector
-- [ShadowTraffic](https://shadowtraffic.io/) - Containerized service for declaratively generating realistic streaming data to Kafka with 50+ functions
 
 ---
 
