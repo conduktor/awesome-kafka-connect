@@ -22,6 +22,9 @@ A curated list of Kafka Connect connectors.
   - [MarkLogic](#marklogic)
   - [ScyllaDB](#scylladb)
   - [ArangoDB](#arangodb)
+  - [Dgraph](#dgraph)
+  - [Memgraph](#memgraph)
+  - [NebulaGraph](#nebulagraph)
   - [OrientDB](#orientdb)
   - [HBase](#hbase)
   - [DynamoDB](#dynamodb)
@@ -134,6 +137,7 @@ A curated list of Kafka Connect connectors.
   - [Jira](#jira)
 - [Content Management](#content-management)
   - [Contentful](#contentful)
+  - [Airtable](#airtable)
 - [Enterprise Systems](#enterprise-systems)
   - [SAP](#sap)
   - [Oracle](#oracle)
@@ -147,6 +151,10 @@ A curated list of Kafka Connect connectors.
   - [Twilio](#twilio)
 - [Email](#email)
 - [IoT](#iot)
+- [Voice & Telephony](#voice--telephony)
+  - [Asterisk](#asterisk)
+  - [FreeSWITCH](#freeswitch)
+- [Audio](#audio)
 - [Industrial & SCADA](#industrial--scada)
 - [Blockchain](#blockchain)
 - [Gaming & Entertainment](#gaming--entertainment)
@@ -243,7 +251,20 @@ A curated list of Kafka Connect connectors.
 
 ### ArangoDB
 
-- [jaredpetersen/kafka-connect-arangodb](https://github.com/jaredpetersen/kafka-connect-arangodb) - Kafka Connect sink connector for ArangoDB
+- [arangodb/kafka-connect-arangodb](https://github.com/arangodb/kafka-connect-arangodb) - Official ArangoDB Kafka Connect sink connector with automatic collection and index creation
+- [jaredpetersen/kafka-connect-arangodb](https://github.com/jaredpetersen/kafka-connect-arangodb) - Community Kafka Connect sink connector for ArangoDB
+
+### Dgraph
+
+- [yupengj/kafka-connect-dgraph](https://github.com/yupengj/kafka-connect-dgraph) - Dgraph graph database sink connector
+
+### Memgraph
+
+- Memgraph includes native Kafka integration via built-in Kafka Streams within its MAGE (Memgraph Advanced Graph Extensions) library for real-time graph analytics
+
+### NebulaGraph
+
+- [vesoft-inc/nebula-exchange](https://github.com/vesoft-inc/nebula-exchange) - NebulaGraph Exchange with Kafka source support for bulk data migration via Apache Spark
 
 ### OrientDB
 
@@ -377,6 +398,11 @@ A curated list of Kafka Connect connectors.
 ### Vertica
 
 - Confluent Vertica connector (commercial)
+
+### Exasol
+
+- [exasol/kafka-connect-jdbc-exasol](https://github.com/exasol/kafka-connect-jdbc-exasol) - Example configuration for Kafka Connect JDBC with Exasol driver
+- [exasol/kafka-connector-extension](https://github.com/exasol/kafka-connector-extension) - Exasol extension for Kafka data ingestion
 
 ---
 
@@ -749,6 +775,10 @@ A curated list of Kafka Connect connectors.
 
 - [dgcaron/kafka-connect-contentful](https://github.com/dgcaron/kafka-connect-contentful) - Contentful CMS source connector using the Sync API
 
+### Airtable
+
+- [atomotic/airtable-cdc-kafka](https://github.com/atomotic/airtable-cdc-kafka) - Airtable CDC source using HTTP connector to poll Airtable API for modified records
+
 ---
 
 ## Enterprise Systems
@@ -811,6 +841,25 @@ A curated list of Kafka Connect connectors.
 
 - [hivemq/hivemq-kafka-extension](https://github.com/hivemq/hivemq-kafka-extension) - MQTT broker to Kafka bridge
 - [jcustenborder/kafka-connect-snmp](https://github.com/jcustenborder/kafka-connect-snmp) - SNMP trap source connector for network device monitoring
+
+---
+
+## Voice & Telephony
+
+### Asterisk
+
+- [gnostix/kafka-connect-asterisk](https://github.com/gnostix/kafka-connect-asterisk) - Asterisk PBX source connector retrieving CDRs and call events via AMI
+- [retel-io/ari-proxy](https://github.com/retel-io/ari-proxy) - Asterisk ARI to Kafka bridge for call control events
+
+### FreeSWITCH
+
+- [voiceip/mod_event_kafka](https://github.com/voiceip/mod_event_kafka) - FreeSWITCH plugin publishing all events to Kafka
+
+---
+
+## Audio
+
+- [C0urante/kafka-connect-sound](https://github.com/C0urante/kafka-connect-sound) - Fun audio sink connector that converts Kafka messages into sound through MIDI
 
 ---
 
