@@ -27,6 +27,7 @@ A curated list of Kafka Connect connectors.
   - [DynamoDB](#dynamodb)
   - [YugabyteDB](#yugabytedb)
   - [Apache Kudu](#apache-kudu)
+  - [RethinkDB](#rethinkdb)
 - [Change Data Capture (CDC)](#change-data-capture-cdc)
 - [Cloud Storage](#cloud-storage)
   - [Amazon S3](#amazon-s3)
@@ -75,8 +76,10 @@ A curated list of Kafka Connect connectors.
   - [Amazon Kinesis](#amazon-kinesis)
   - [Amazon EventBridge](#amazon-eventbridge)
   - [NATS](#nats)
+  - [Apache Pulsar](#apache-pulsar)
   - [Google Pub/Sub](#google-pubsub)
   - [Azure Event Hubs](#azure-event-hubs)
+  - [Azure Service Bus](#azure-service-bus)
   - [Solace PubSub+](#solace-pubsub)
 - [Serverless & Functions](#serverless--functions)
   - [AWS Lambda](#aws-lambda)
@@ -92,6 +95,7 @@ A curated list of Kafka Connect connectors.
   - [New Relic](#new-relic)
   - [PagerDuty](#pagerduty)
   - [Syslog](#syslog)
+  - [Humio / LogScale](#humio--logscale)
   - [Grafana Loki](#grafana-loki)
   - [OpenTelemetry](#opentelemetry)
 - [Caching](#caching)
@@ -105,6 +109,9 @@ A curated list of Kafka Connect connectors.
   - [ServiceNow](#servicenow)
   - [Zendesk](#zendesk)
   - [Marketo](#marketo)
+  - [Segment](#segment)
+  - [Google Analytics](#google-analytics)
+  - [Mixpanel](#mixpanel)
 - [Developer Tools](#developer-tools)
   - [GitLab](#gitlab)
   - [GitHub](#github)
@@ -112,10 +119,14 @@ A curated list of Kafka Connect connectors.
 - [Enterprise Systems](#enterprise-systems)
   - [SAP](#sap)
   - [Oracle](#oracle)
+  - [IBM AS/400 (IBM i)](#ibm-as400-ibm-i)
+  - [TIBCO EMS](#tibco-ems)
+  - [Oracle Coherence](#oracle-coherence)
 - [Social Media](#social-media)
   - [Slack](#slack)
   - [Telegram](#telegram)
   - [Twitter](#twitter)
+  - [Twilio](#twilio)
 - [Email](#email)
 - [IoT](#iot)
 - [Blockchain](#blockchain)
@@ -128,6 +139,11 @@ A curated list of Kafka Connect connectors.
 - [GIS & Geospatial](#gis--geospatial)
 - [Machine Learning & Feature Stores](#machine-learning--feature-stores)
 - [Data Catalogs](#data-catalogs)
+- [DevOps & Infrastructure](#devops--infrastructure)
+  - [Kubernetes](#kubernetes)
+  - [HashiCorp Vault](#hashicorp-vault)
+  - [Distributed Tracing](#distributed-tracing)
+  - [Terraform](#terraform)
 - [Multi-Connector Packages](#multi-connector-packages)
   - [Lenses Stream Reactor](#lenses-stream-reactor)
   - [Aiven Open Source](#aiven-open-source)
@@ -230,6 +246,11 @@ A curated list of Kafka Connect connectors.
 
 - [onfocusio/kafka-connect-kudu](https://github.com/onfocusio/kafka-connect-kudu) - Apache Kudu sink connector
 
+### RethinkDB
+
+- [jcustenborder/kafka-connect-rethinkdb](https://github.com/jcustenborder/kafka-connect-rethinkdb) - RethinkDB sink connector
+- Lenses Stream Reactor includes RethinkDB source (changefeed) and sink connectors
+
 ---
 
 ## Change Data Capture (CDC)
@@ -241,6 +262,7 @@ A curated list of Kafka Connect connectors.
 - [thake/logminer-kafka-connect](https://github.com/thake/logminer-kafka-connect) - Oracle CDC using LogMiner (no GoldenGate required)
 - [imanzano/GoldenGateConfluentKafkaConnector](https://github.com/imanzano/GoldenGateConfluentKafkaConnector) - Oracle GoldenGate Kafka Connect handler for Confluent (for GoldenGate versions prior to 12.3.1)
 - Oracle GoldenGate for Big Data - Official Kafka Connect Handler (commercial, included in GoldenGate 12.3.1+)
+- [jhc-systems/debezium-connector-ibmi](https://github.com/jhc-systems/debezium-connector-ibmi) - Debezium CDC connector for IBM i (AS/400) using journals
 
 ---
 
@@ -450,10 +472,18 @@ A curated list of Kafka Connect connectors.
 
 - [aws/eventbridge-kafka-connector](https://github.com/aws/eventbridge-kafka-connector) - Sink connector for Amazon EventBridge with S3 offloading
 
+### Apache Pulsar
+
+- [streamnative/pulsar-io-kafka](https://github.com/streamnative/pulsar-io-kafka) - Pulsar IO connector for consuming from or publishing to Kafka topics (bridge)
+
 ### Google Pub/Sub
 
 - [googleapis/java-pubsub-group-kafka-connector](https://github.com/googleapis/java-pubsub-group-kafka-connector) - Official Google Pub/Sub Kafka connector
 - Confluent Pub/Sub connector (commercial)
+
+### Azure Service Bus
+
+- [research-virtualfortknox/simple-kafka-msb-connector](https://github.com/research-virtualfortknox/simple-kafka-msb-connector) - Kafka to Azure Service Bus bridge (topics <-> queues)
 
 ### Azure Event Hubs
 
@@ -537,6 +567,10 @@ A curated list of Kafka Connect connectors.
 
 - [jeschkies/kafka-connect-loki](https://github.com/jeschkies/kafka-connect-loki) - Loki sink connector for log aggregation
 
+### Humio / CrowdStrike LogScale
+
+- [humio/kafka-connect-hec-sink](https://github.com/humio/kafka-connect-hec-sink) - HTTP Event Collector (HEC) sink to LogScale/Humio
+
 ### OpenTelemetry
 
 - [conduktor/kafka-connect-opentelemetry](https://github.com/conduktor/kafka-connect-opentelemetry) - Source connector ingesting OTLP traces/metrics/logs into Kafka
@@ -577,6 +611,7 @@ A curated list of Kafka Connect connectors.
 
 ### ServiceNow
 
+- [IBM/kafka-connect-servicenow](https://github.com/IBM/kafka-connect-servicenow) - ServiceNow source connector
 - Confluent ServiceNow source connector (commercial)
 
 ### Zendesk
@@ -586,6 +621,18 @@ A curated list of Kafka Connect connectors.
 ### Marketo
 
 - Confluent Marketo source connector (commercial)
+
+### Segment
+
+- [segment-integrations/connect-kafka](https://github.com/segment-integrations/connect-kafka) - Segment destination for sending events to Kafka
+
+### Google Analytics
+
+- [MrTrustworthy/kafka-connect-googleanalytics](https://github.com/MrTrustworthy/kafka-connect-googleanalytics) - Google Analytics Reporting API source connector
+
+### Mixpanel
+
+- [cpard/kafka-connect-mixpanel](https://github.com/cpard/kafka-connect-mixpanel) - Mixpanel events sink connector
 
 ---
 
@@ -616,6 +663,20 @@ A curated list of Kafka Connect connectors.
 
 - Works with Debezium Oracle connector or JDBC connector
 
+### IBM AS/400 (IBM i)
+
+- [jhc-systems/debezium-connector-ibmi](https://github.com/jhc-systems/debezium-connector-ibmi) - Debezium CDC connector for IBM i using journals
+- Infoview Systems infoConnect for Kafka (commercial) - Data queue source/sink and program call connectors
+
+### TIBCO EMS
+
+- Confluent TIBCO EMS source and sink connectors (commercial)
+- [macronova/kafka-connect-jms](https://github.com/macronova/kafka-connect-jms) - JMS connector supporting TIBCO EMS
+
+### Oracle Coherence
+
+- [oracle/coherence-kafka](https://github.com/oracle/coherence-kafka) - Official Oracle Coherence sink connector and cache store
+
 ---
 
 ## Social Media
@@ -632,6 +693,10 @@ A curated list of Kafka Connect connectors.
 
 - [jcustenborder/kafka-connect-twitter](https://github.com/jcustenborder/kafka-connect-twitter) - Twitter streaming API source connector
 - [Eneco/kafka-connect-twitter](https://github.com/Eneco/kafka-connect-twitter) - Twitter source and sink connector
+
+### Twilio
+
+- [cloudstark/kafka-connect-twilio](https://github.com/cloudstark/kafka-connect-twilio) - Twilio SMS sink connector
 
 ---
 
@@ -720,6 +785,31 @@ A curated list of Kafka Connect connectors.
 
 - [jhollandus/kafka-atlas](https://github.com/jhollandus/kafka-atlas) - POC for integrating Kafka Connect and Schema Registry with Apache Atlas
 - DataHub ingests Kafka Connect metadata for lineage tracking
+
+---
+
+## DevOps & Infrastructure
+
+### Kubernetes
+
+- [midhun1998/kafka-connect-kubernetes-events](https://github.com/midhun1998/kafka-connect-kubernetes-events) - Kubernetes events source connector
+- [AmadeusITGroup/Kubernetes-Kafka-Connect-Operator](https://github.com/AmadeusITGroup/Kubernetes-Kafka-Connect-Operator) - Kubernetes operator for deploying and auto-scaling Kafka Connect
+- [strimzi/strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) - CNCF Kubernetes operator with KafkaConnector CRD support
+
+### HashiCorp Vault
+
+- [jcustenborder/kafka-config-provider-vault](https://github.com/jcustenborder/kafka-config-provider-vault) - Kafka config provider for retrieving secrets from Vault (supports approle, kubernetes, token, ldap, gcp, aws auth)
+- [convoyinc/KafkaVaultProvider](https://github.com/convoyinc/KafkaVaultProvider) - Kafka config provider for Vault API integration
+
+### Distributed Tracing
+
+- [openzipkin-contrib/brave-kafka-interceptor](https://github.com/openzipkin-contrib/brave-kafka-interceptor) - Zipkin tracing interceptors for Kafka Connect and producers/consumers
+- Strimzi supports OpenTelemetry tracing with Jaeger backend for Kafka Connect
+
+### Terraform
+
+- [Mongey/terraform-provider-kafka-connect](https://github.com/Mongey/terraform-provider-kafka-connect) - Terraform provider for managing Kafka Connect connectors
+- [b-social/terraform-provider-kafkaconnect](https://github.com/b-social/terraform-provider-kafkaconnect) - Alternative Terraform provider for Kafka Connect
 
 ---
 
