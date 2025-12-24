@@ -85,6 +85,7 @@ A curated list of Kafka Connect connectors.
 - [IoT](#iot)
 - [Blockchain](#blockchain)
 - [Data Formats & Transformations](#data-formats--transformations)
+- [Data Generators & Testing](#data-generators--testing)
 - [Multi-Connector Packages](#multi-connector-packages)
   - [Lenses Stream Reactor](#lenses-stream-reactor)
   - [Aiven Open Source](#aiven-open-source)
@@ -470,6 +471,17 @@ A curated list of Kafka Connect connectors.
 - [Aiven-Open/transforms-for-apache-kafka-connect](https://github.com/Aiven-Open/transforms-for-apache-kafka-connect) - Aiven's collection of Single Message Transformations (SMTs)
 - [jcustenborder/kafka-connect-transform-common](https://github.com/jcustenborder/kafka-connect-transform-common) - Common transformations library
 - [confluentinc/connect-transforms](https://github.com/confluentinc/connect-transforms) - Confluent community SMTs
+
+---
+
+## Data Generators & Testing
+
+- [confluentinc/kafka-connect-datagen](https://github.com/confluentinc/kafka-connect-datagen) - Confluent's datagen source connector for generating mock data with Avro schemas, JSON, or Protobuf
+- [MichaelDrogalis/voluble](https://github.com/MichaelDrogalis/voluble) - Intelligent data generator with cross-topic relationships, tombstoning, and configurable rates
+- [awslabs/amazon-msk-data-generator](https://github.com/awslabs/amazon-msk-data-generator) - AWS MSK data generator (Java port of Voluble) with referential consistency
+- [MaterializeInc/datagen](https://github.com/MaterializeInc/datagen) - Generate mock data from SQL, JSON, or Avro schemas to Kafka in JSON or Avro format
+- [sasakitoa/kafka-connect-random](https://github.com/sasakitoa/kafka-connect-random) - Simple random value source connector
+- [ShadowTraffic](https://shadowtraffic.io/) - Containerized service for declaratively generating realistic streaming data to Kafka with 50+ functions
 
 ---
 
