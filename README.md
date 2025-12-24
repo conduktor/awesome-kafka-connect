@@ -28,6 +28,8 @@ A curated list of Kafka Connect connectors.
   - [YugabyteDB](#yugabytedb)
   - [Apache Kudu](#apache-kudu)
   - [RethinkDB](#rethinkdb)
+  - [TiDB](#tidb)
+  - [Materialize](#materialize)
 - [Change Data Capture (CDC)](#change-data-capture-cdc)
 - [Cloud Storage](#cloud-storage)
   - [Amazon S3](#amazon-s3)
@@ -47,6 +49,7 @@ A curated list of Kafka Connect connectors.
   - [Databend](#databend)
   - [Teradata](#teradata)
   - [Vertica](#vertica)
+  - [Exasol](#exasol)
 - [Open Table Formats (Lakehouse)](#open-table-formats-lakehouse)
   - [Apache Iceberg](#apache-iceberg)
   - [Apache Hudi](#apache-hudi)
@@ -84,6 +87,7 @@ A curated list of Kafka Connect connectors.
   - [Solace PubSub+](#solace-pubsub)
 - [Serverless & Functions](#serverless--functions)
   - [AWS Lambda](#aws-lambda)
+  - [Firebase](#firebase)
 - [File Systems](#file-systems)
   - [FilePulse](#filepulse)
   - [SpoolDir](#spooldir)
@@ -105,6 +109,10 @@ A curated list of Kafka Connect connectors.
   - [Grafana Loki](#grafana-loki)
   - [OpenTelemetry](#opentelemetry)
   - [Cisco UCM](#cisco-ucm)
+  - [Sumo Logic](#sumo-logic)
+- [Identity & Security](#identity--security)
+  - [Okta](#okta)
+  - [Keycloak](#keycloak)
 - [Caching](#caching)
   - [Redis](#redis)
   - [Hazelcast](#hazelcast)
@@ -119,6 +127,7 @@ A curated list of Kafka Connect connectors.
   - [Segment](#segment)
   - [Google Analytics](#google-analytics)
   - [Mixpanel](#mixpanel)
+  - [Amplitude](#amplitude)
 - [Developer Tools](#developer-tools)
   - [GitLab](#gitlab)
   - [GitHub](#github)
@@ -262,6 +271,15 @@ A curated list of Kafka Connect connectors.
 
 - [jcustenborder/kafka-connect-rethinkdb](https://github.com/jcustenborder/kafka-connect-rethinkdb) - RethinkDB sink connector
 - Lenses Stream Reactor includes RethinkDB source (changefeed) and sink connectors
+
+### TiDB
+
+- Works with MySQL JDBC connector or Debezium MySQL connector (MySQL protocol compatible)
+- [pingcap/tidb-binlog](https://github.com/pingcap/tidb-binlog) - TiDB binlog tools for CDC to Kafka
+
+### Materialize
+
+- [MaterializeInc/materialize](https://github.com/MaterializeInc/materialize) - Streaming database with native Kafka source support for incremental view maintenance
 
 ---
 
@@ -520,6 +538,11 @@ A curated list of Kafka Connect connectors.
 
 - [llofberg/kafka-connect-aws-lambda](https://github.com/llofberg/kafka-connect-aws-lambda) - AWS Lambda sink connector invoking functions with Kafka records
 
+### Firebase
+
+- [fcarp10/kafka-connectors](https://github.com/fcarp10/kafka-connectors) - Firebase and Elasticsearch connectors for Kafka Connect
+- Confluent Firebase Connector (commercial) - Firebase Realtime Database source and sink
+
 ---
 
 ## File Systems
@@ -555,6 +578,7 @@ A curated list of Kafka Connect connectors.
 - [Platformatory/webhook-source-connector](https://github.com/Platformatory/webhook-source-connector) - Webhook source connector with Netty HTTP server
 - [jcustenborder/kafka-connect-servlet](https://github.com/jcustenborder/kafka-connect-servlet) - Framework for building webhook-based connectors with embedded Jetty
 - [jcustenborder/kafka-connect-github-webhook](https://github.com/jcustenborder/kafka-connect-github-webhook) - GitHub webhook source connector
+- [kaliy/kafka-connect-rss](https://github.com/kaliy/kafka-connect-rss) - RSS/Atom feed source connector
 - Confluent HTTP source and sink connectors (commercial)
 
 ---
@@ -622,6 +646,22 @@ A curated list of Kafka Connect connectors.
 
 - [CiscoDevNet/kafka-connect-cucm-callmanager-cdr](https://github.com/CiscoDevNet/kafka-connect-cucm-callmanager-cdr) - Cisco CallManager CDR/CMR source connector
 
+### Sumo Logic
+
+- [SumoLogic/sumologic-kafka-push](https://github.com/SumoLogic/sumologic-kafka-push) - Utility for reading logs from Kafka and sending to Sumo Logic
+
+---
+
+## Identity & Security
+
+### Okta
+
+- [Atulya1/Kafka-Oauth2](https://github.com/Atulya1/Kafka-Oauth2) - Okta OAuth2-protected REST source connector example
+
+### Keycloak
+
+- [SnuK87/keycloak-kafka](https://github.com/SnuK87/keycloak-kafka) - Keycloak SPI module that publishes authentication events to Kafka topics
+
 ---
 
 ## Caching
@@ -680,6 +720,10 @@ A curated list of Kafka Connect connectors.
 ### Mixpanel
 
 - [cpard/kafka-connect-mixpanel](https://github.com/cpard/kafka-connect-mixpanel) - Mixpanel events sink connector
+
+### Amplitude
+
+- [ecerulm/kafka-connect-amplitude](https://github.com/ecerulm/kafka-connect-amplitude) - Amplitude Batch Upload API sink connector
 
 ---
 
