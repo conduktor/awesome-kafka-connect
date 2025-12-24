@@ -75,6 +75,7 @@ A curated list of Kafka Connect connectors.
   - [Amazon SQS](#amazon-sqs)
   - [Amazon Kinesis](#amazon-kinesis)
   - [Amazon EventBridge](#amazon-eventbridge)
+  - [Apache RocketMQ](#apache-rocketmq)
   - [NATS](#nats)
   - [Apache Pulsar](#apache-pulsar)
   - [Google Pub/Sub](#google-pubsub)
@@ -89,6 +90,11 @@ A curated list of Kafka Connect connectors.
   - [SFTP/FTP](#sftpftp)
   - [HDFS](#hdfs)
 - [HTTP & REST](#http--rest)
+- [Network Protocols](#network-protocols)
+  - [TCP/UDP Sockets](#tcpudp-sockets)
+  - [WebSocket](#websocket)
+  - [GraphQL](#graphql)
+  - [NetFlow/IPFIX](#netflowipfix)
 - [Logging & Monitoring](#logging--monitoring)
   - [Splunk](#splunk)
   - [Datadog](#datadog)
@@ -98,6 +104,7 @@ A curated list of Kafka Connect connectors.
   - [Humio / LogScale](#humio--logscale)
   - [Grafana Loki](#grafana-loki)
   - [OpenTelemetry](#opentelemetry)
+  - [Cisco UCM](#cisco-ucm)
 - [Caching](#caching)
   - [Redis](#redis)
   - [Hazelcast](#hazelcast)
@@ -116,6 +123,8 @@ A curated list of Kafka Connect connectors.
   - [GitLab](#gitlab)
   - [GitHub](#github)
   - [Jira](#jira)
+- [Content Management](#content-management)
+  - [Contentful](#contentful)
 - [Enterprise Systems](#enterprise-systems)
   - [SAP](#sap)
   - [Oracle](#oracle)
@@ -129,7 +138,10 @@ A curated list of Kafka Connect connectors.
   - [Twilio](#twilio)
 - [Email](#email)
 - [IoT](#iot)
+- [Industrial & SCADA](#industrial--scada)
 - [Blockchain](#blockchain)
+- [Gaming & Entertainment](#gaming--entertainment)
+- [Document Processing](#document-processing)
 - [Data Formats & Transformations](#data-formats--transformations)
 - [Data Generators & Testing](#data-generators--testing)
 - [Real-Time Data Platforms](#real-time-data-platforms)
@@ -274,6 +286,8 @@ A curated list of Kafka Connect connectors.
 - [Aiven-Open/cloud-storage-connectors-for-apache-kafka](https://github.com/Aiven-Open/cloud-storage-connectors-for-apache-kafka) - Aiven's cloud storage connectors (S3, GCS, Azure)
 - [spredfast/kafka-connect-s3](https://github.com/spredfast/kafka-connect-s3) - Spredfast S3 sink connector
 - [wix-incubator/kafka-connect-s3](https://github.com/wix-incubator/kafka-connect-s3) - S3 sink with block-GZIP compression and index files
+- [llofberg/kafka-connect-s3-parquet](https://github.com/llofberg/kafka-connect-s3-parquet) - S3 source connector reading Parquet files
+- [byegor/kafka-connect-s3-orc](https://github.com/byegor/kafka-connect-s3-orc) - S3 source connector reading ORC files
 
 ### Google Cloud Storage
 
@@ -476,6 +490,10 @@ A curated list of Kafka Connect connectors.
 
 - [streamnative/pulsar-io-kafka](https://github.com/streamnative/pulsar-io-kafka) - Pulsar IO connector for consuming from or publishing to Kafka topics (bridge)
 
+### Apache RocketMQ
+
+- [bigdatafly/kafka-rocketmq-source](https://github.com/bigdatafly/kafka-rocketmq-source) - Kafka Connect source for RocketMQ
+
 ### Google Pub/Sub
 
 - [googleapis/java-pubsub-group-kafka-connector](https://github.com/googleapis/java-pubsub-group-kafka-connector) - Official Google Pub/Sub Kafka connector
@@ -541,6 +559,31 @@ A curated list of Kafka Connect connectors.
 
 ---
 
+## Network Protocols
+
+### TCP/UDP Sockets
+
+- [vrudenskyi/kafka-connect-netty-source](https://github.com/vrudenskyi/kafka-connect-netty-source) - Netty-based source connector supporting TCP and UDP with configurable protocol handlers
+- [dhanuka84/kafka-connect-tcp](https://github.com/dhanuka84/kafka-connect-tcp) - TCP socket source connector
+- [daniellavoie/kafka-connect-udp](https://github.com/daniellavoie/kafka-connect-udp) - UDP source connector (no ordering guarantees, cannot run in distributed mode)
+- Confluent Data Diode connector (commercial) - Unidirectional Kafka-to-Kafka replication over UDP for high-security environments
+
+### WebSocket
+
+- [evolv34/kafka-connect-ws](https://github.com/evolv34/kafka-connect-ws) - WebSocket source connector for streaming real-time data
+- [jcustenborder/kafka-connect-socket](https://github.com/jcustenborder/kafka-connect-socket) - Generic socket connector framework
+
+### GraphQL
+
+- [jorgechato/kafka-connect-graphql](https://github.com/jorgechato/kafka-connect-graphql) - GraphQL source connector with Avro serialization and Schema Registry support
+- Apache Camel GraphQL Sink Connector via camel-kafka-connector
+
+### NetFlow/IPFIX
+
+- [jcustenborder/kafka-connect-netflow](https://github.com/jcustenborder/kafka-connect-netflow) - NetFlow v5/v9 and IPFIX source connector for network traffic analysis
+
+---
+
 ## Logging & Monitoring
 
 ### Splunk
@@ -574,6 +617,10 @@ A curated list of Kafka Connect connectors.
 ### OpenTelemetry
 
 - [conduktor/kafka-connect-opentelemetry](https://github.com/conduktor/kafka-connect-opentelemetry) - Source connector ingesting OTLP traces/metrics/logs into Kafka
+
+### Cisco UCM
+
+- [CiscoDevNet/kafka-connect-cucm-callmanager-cdr](https://github.com/CiscoDevNet/kafka-connect-cucm-callmanager-cdr) - Cisco CallManager CDR/CMR source connector
 
 ---
 
@@ -652,6 +699,14 @@ A curated list of Kafka Connect connectors.
 
 ---
 
+## Content Management
+
+### Contentful
+
+- [dgcaron/kafka-connect-contentful](https://github.com/dgcaron/kafka-connect-contentful) - Contentful CMS source connector using the Sync API
+
+---
+
 ## Enterprise Systems
 
 ### SAP
@@ -715,9 +770,29 @@ A curated list of Kafka Connect connectors.
 
 ---
 
+## Industrial & SCADA
+
+- [apache/plc4x](https://github.com/apache/plc4x) - Apache PLC4X Kafka Connect integration supporting OPC-UA, Modbus, Siemens S7, Allen Bradley, and 30+ industrial protocols
+- [kaiwaehner/ksql-udf-deep-learning-mqtt-iot](https://github.com/kaiwaehner/ksql-udf-deep-learning-mqtt-iot) - Reference architecture for IIoT with PLC4X, Kafka Connect, and KSQL
+- [industrial-edge/Apache-Kafka-Connector](https://github.com/industrial-edge/Apache-Kafka-Connector) - Siemens Industrial Edge connector for streaming PLC data to Kafka
+
+---
+
 ## Blockchain
 
 - [hyperledger-labs/hlf-connector](https://github.com/hyperledger-labs/hlf-connector) - Hyperledger Fabric Kafka Connect source connector
+
+---
+
+## Gaming & Entertainment
+
+- [dalelane/kafka-connect-xboxlive-source](https://github.com/dalelane/kafka-connect-xboxlive-source) - Xbox Live activity feed source connector streaming gaming events
+
+---
+
+## Document Processing
+
+- [DataReply/kafka-connect-document-source](https://github.com/DataReply/kafka-connect-document-source) - Document extraction source connector supporting PDF, Word, and other document formats via Apache Tika
 
 ---
 
