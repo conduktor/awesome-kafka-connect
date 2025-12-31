@@ -4,7 +4,9 @@ A curated list of Kafka Connect connectors.
 
 > See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) - A comprehensive list of Apache Kafka resources, tools, and libraries
 
-**Legend:** ⚠️ Inactive (no commits in 2+ years) · 📦 Archived
+> **Last verified:** December 24, 2025
+>
+> **Legend:** ⚠️ Inactive (no commits in 2+ years) · 📦 Archived
 
 ## Contents
 
