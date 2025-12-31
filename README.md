@@ -3,6 +3,8 @@
 A curated list of Kafka Connect connectors.
 
 > See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) - A comprehensive list of Apache Kafka resources, tools, and libraries
+>
+> See also: [Kafka Security Controls](https://conduktor.github.io/kafka-security-controls/) - Kafka Connect security controls mapping to CWE, NIST 800-53, and PCI-DSS standards. Integrates with OpenCRE.
 
 > **Last verified:** December 24, 2025
 >
