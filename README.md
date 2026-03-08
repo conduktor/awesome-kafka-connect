@@ -2,7 +2,7 @@
 
 A curated list of Kafka Connect connectors.
 
-**Last verified:** December 24, 2025 · **Legend:** ⚠️ Inactive (no commits in 2+ years) · 📦 Archived
+**Last verified:** March 8, 2026 · **Legend:** ⚠️ Inactive (no commits in 2+ years) · 📦 Archived
 
 See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka Security Controls](https://conduktor.github.io/kafka-security-controls/) to help with CWE, NIST 800-53, and PCI-DSS compliance.
 
@@ -20,6 +20,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
   - [SingleStore (MemSQL)](#singlestore-memsql)
   - [Couchbase](#couchbase)
   - [CouchDB](#couchdb)
+  - [Amazon DocumentDB](#amazon-documentdb)
   - [Azure Cosmos DB](#azure-cosmos-db)
   - [MarkLogic](#marklogic)
   - [ScyllaDB](#scylladb)
@@ -230,9 +231,14 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 - ⚠️ [xebia/kafka-connect-couchdb](https://github.com/xebia/kafka-connect-couchdb) - CouchDB / IBM Cloudant sink connector
 
+### Amazon DocumentDB
+
+- Amazon DocumentDB Sink Connector (Confluent Cloud fully managed) - Sink for DocumentDB engine versions 4.0, 5.0, 8.0 with IAM role-based auth
+
 ### Azure Cosmos DB
 
 - [microsoft/kafka-connect-cosmosdb](https://github.com/microsoft/kafka-connect-cosmosdb) - Azure Cosmos DB sink connector for SQL API
+- [Confluent Cloud V2 Cosmos DB Connector](https://devblogs.microsoft.com/cosmosdb/confluent-cloud-releases-managed-v2-kafka-connector-for-azure-cosmos-db/) - Source and sink with container batching, pull-model change feed, and throughput control
 
 ### MarkLogic
 
@@ -299,7 +305,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 ## Change Data Capture (CDC)
 
-- [debezium/debezium](https://github.com/debezium/debezium) - Leading CDC platform with connectors for MySQL, PostgreSQL, MongoDB, Oracle, SQL Server, Db2, Cassandra, Vitess, Spanner
+- [debezium/debezium](https://github.com/debezium/debezium) - Leading CDC platform with connectors for MySQL, PostgreSQL, MongoDB, Oracle, SQL Server, Db2, Cassandra, Vitess, Spanner. v3.5 adds parallel snapshotting, CockroachDB snapshot mode, Oracle 26ai support, and Quarkus native extensions.
 - [zendesk/maxwell](https://github.com/zendesk/maxwell) - Maxwell's daemon for MySQL CDC to Kafka
 - [alibaba/canal](https://github.com/alibaba/canal) - Alibaba MySQL binlog incremental subscription & consumption
 - [confluentinc/kafka-connect-jdbc](https://github.com/confluentinc/kafka-connect-jdbc) - Query-based CDC using incrementing/timestamp columns
@@ -402,7 +408,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 ### Apache Iceberg
 
-- [tabular-io/iceberg-kafka-connect](https://github.com/tabular-io/iceberg-kafka-connect) - Tabular's Iceberg Kafka Connect sink
+- [tabular-io/iceberg-kafka-connect](https://github.com/tabular-io/iceberg-kafka-connect) - Tabular's Iceberg Kafka Connect sink with exactly-once (KIP-447), dynamic routing, upsert mode, CDC mode with equality deletes. Supports REST, Glue, DynamoDB, Hadoop, Nessie, JDBC, Hive, BigQuery Metastore catalogs.
 - 📦 [getindata/kafka-connect-iceberg-sink](https://github.com/getindata/kafka-connect-iceberg-sink) - GetInData's Iceberg sink connector
 
 ### Apache Hudi
@@ -421,6 +427,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 ### Elasticsearch
 
 - [confluentinc/kafka-connect-elasticsearch](https://github.com/confluentinc/kafka-connect-elasticsearch) - Confluent's Elasticsearch sink connector
+- Confluent Elasticsearch V2 Sink (Confluent Cloud fully managed) - New V2 architecture supporting Elasticsearch 8.x and 9.x with `topics.regex` and topic-to-resource mapping
 - [Aiven-Open/elasticsearch-connector-for-apache-kafka](https://github.com/Aiven-Open/elasticsearch-connector-for-apache-kafka) - Aiven's Elasticsearch sink connector
 
 ### OpenSearch
@@ -442,7 +449,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 ### Weaviate
 
-- [weaviate/weaviate](https://github.com/weaviate/weaviate) - Kafka Connect integration available
+- [weaviate/kafka-connect-weaviate](https://github.com/weaviate/kafka-connect-weaviate) - Official Weaviate sink connector with INSERT/UPSERT/DELETE, Avro/JSON/Protobuf, gRPC batching, and bring-your-own-vector support (Confluent-verified)
 
 ### Pinecone
 
@@ -450,7 +457,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 ### Qdrant
 
-- [qdrant/qdrant-kafka](https://github.com/qdrant/qdrant-kafka) - Qdrant vector database sink connector
+- [qdrant/qdrant-kafka](https://github.com/qdrant/qdrant-kafka) - Official Qdrant sink connector supporting dense, sparse, and multi-vector configurations
 
 ---
 
@@ -863,6 +870,11 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 - [Aiven-Open/transforms-for-apache-kafka-connect](https://github.com/Aiven-Open/transforms-for-apache-kafka-connect) - Aiven's collection of Single Message Transformations (SMTs)
 - [jcustenborder/kafka-connect-transform-common](https://github.com/jcustenborder/kafka-connect-transform-common) - Common transformations library
 - [jcustenborder/kafka-connect-transform-maxmind](https://github.com/jcustenborder/kafka-connect-transform-maxmind) - MaxMind GeoIP2 transform to enrich records with geolocation data
+- [Debezium FieldToEmbedding SMT](https://debezium.io/documentation/reference/stable/ai/embeddings.html) - Generates vector embeddings from record fields using Hugging Face, Ollama, or embedded ONNX models inline in the connector pipeline (Debezium AI module)
+- [Debezium GeometryFormatTransformer](https://debezium.io/documentation/reference/stable/transformations/geometry-format-transformer.html) - Converts between WKB and EWKB geospatial formats for PostGIS/spatial CDC
+- [Debezium OpenLineage SMT](https://debezium.io/documentation/reference/stable/integrations/openlineage.html) - Automatic data lineage tracking for CDC pipelines via OpenLineage
+- [Confluent FromXML SMT](https://docs.confluent.io/cloud/current/connectors/transforms/fromxml.html) - Converts XML bytes/strings to strongly-typed Connect structs (GA on HTTP V2, IBM MQ Source)
+- [Iceberg JsonToMapTransform SMT](https://iceberg.apache.org/docs/nightly/kafka-connect/) - Converts nested JSON with dynamic keys to Iceberg Map(String) columns, preventing column explosion
 - ⚠️ [jcustenborder/kafka-connect-transform-archive](https://github.com/jcustenborder/kafka-connect-transform-archive) - Transform to assist with archiving records to S3
 - ⚠️ [jcustenborder/kafka-connect-transform-xml](https://github.com/jcustenborder/kafka-connect-transform-xml) - Transform for converting XML data to structured data
 - ⚠️ [jcustenborder/kafka-connect-transform-fix](https://github.com/jcustenborder/kafka-connect-transform-fix) - Transform for reading FIX protocol messages
@@ -953,7 +965,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 ### Lenses Stream Reactor
 
-- [lensesio/stream-reactor](https://github.com/lensesio/stream-reactor) - 30+ connectors covering S3/GCS/Azure storage, Cassandra/HBase/Kudu, Elasticsearch/Solr, InfluxDB, JMS/MQTT, FTP/SFTP, Redis, MongoDB, blockchain/IoT, and more
+- [lensesio/stream-reactor](https://github.com/lensesio/stream-reactor) - 30+ connectors covering S3/GCS/Azure storage, Cassandra/HBase/Kudu, Elasticsearch/Solr, InfluxDB, JMS/MQTT, FTP/SFTP, Redis, MongoDB, blockchain/IoT, and more. v11.0 ships Kafka 4.x support with new Cassandra and CosmosDB connectors.
 
 ### Aiven Open Source
 
