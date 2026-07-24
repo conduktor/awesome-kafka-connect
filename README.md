@@ -2,7 +2,7 @@
 
 A curated list of Kafka Connect connectors.
 
-**Last verified:** March 8, 2026 · **Legend:** ⚠️ Inactive (no commits in 2+ years) · 📦 Archived
+**Last verified:** July 24, 2026 · **Legend:** ⚠️ Inactive (no commits in 2+ years) · 📦 Archived
 
 See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka Security Controls](https://conduktor.github.io/kafka-security-controls/) to help with CWE, NIST 800-53, and PCI-DSS compliance.
 
@@ -35,6 +35,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
   - [RethinkDB](#rethinkdb)
   - [TiDB](#tidb)
   - [Materialize](#materialize)
+  - [SurrealDB](#surrealdb)
 - [Change Data Capture (CDC)](#change-data-capture-cdc)
 - [Cloud Storage](#cloud-storage)
   - [Amazon S3](#amazon-s3)
@@ -47,6 +48,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
   - [Redshift](#redshift)
   - [Databricks](#databricks)
   - [Azure Data Explorer (Kusto)](#azure-data-explorer-kusto)
+  - [Microsoft Fabric](#microsoft-fabric)
   - [Apache Pinot](#apache-pinot)
   - [Apache Druid](#apache-druid)
   - [StarRocks](#starrocks)
@@ -59,6 +61,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
   - [Apache Iceberg](#apache-iceberg)
   - [Apache Hudi](#apache-hudi)
   - [Delta Lake](#delta-lake)
+  - [DuckLake](#ducklake)
 - [Search Engines](#search-engines)
   - [Elasticsearch](#elasticsearch)
   - [OpenSearch](#opensearch)
@@ -201,7 +204,8 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 ### Neo4j
 
-- [neo4j-contrib/neo4j-streams](https://github.com/neo4j-contrib/neo4j-streams) - Neo4j Kafka Streams integration with Kafka Connect sink
+- [neo4j/neo4j-kafka-connector](https://github.com/neo4j/neo4j-kafka-connector) - Official Neo4j Kafka Connect source and sink connector (v5.5.0; supersedes neo4j-streams)
+- [neo4j-contrib/neo4j-streams](https://github.com/neo4j-contrib/neo4j-streams) - Legacy Neo4j Kafka Streams integration with Kafka Connect sink
 
 ### TigerGraph
 
@@ -213,7 +217,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 ### ClickHouse
 
-- [ClickHouse/clickhouse-kafka-connect](https://github.com/ClickHouse/clickhouse-kafka-connect) - Official ClickHouse Kafka Connect sink connector
+- [ClickHouse/clickhouse-kafka-connect](https://github.com/ClickHouse/clickhouse-kafka-connect) - Official ClickHouse Kafka Connect sink connector (v1.4.0; per-partition JMX metrics, per-message DLQ, required for ClickHouse 25.10+)
 
 ### CockroachDB
 
@@ -301,18 +305,22 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 - [MaterializeInc/materialize](https://github.com/MaterializeInc/materialize) - Streaming database with native Kafka source support for incremental view maintenance
 
+### SurrealDB
+
+- [surrealdb/surreal-sync](https://github.com/surrealdb/surreal-sync) - Official SurrealDB sync tool with a Kafka source (Protobuf-encoded messages upserted into SurrealDB); standalone Rust tool, not a Kafka Connect plugin
+
 ---
 
 ## Change Data Capture (CDC)
 
-- [debezium/debezium](https://github.com/debezium/debezium) - Leading CDC platform with connectors for MySQL, PostgreSQL, MongoDB, Oracle, SQL Server, Db2, Cassandra, Vitess, Spanner. v3.5 adds parallel snapshotting, CockroachDB snapshot mode, Oracle 26ai support, and Quarkus native extensions.
-- [zendesk/maxwell](https://github.com/zendesk/maxwell) - Maxwell's daemon for MySQL CDC to Kafka
+- [debezium/debezium](https://github.com/debezium/debezium) - Leading CDC platform with connectors for MySQL, PostgreSQL, MongoDB, Oracle, SQL Server, Db2, Cassandra, Vitess, Spanner. v3.6 (built on Apache Kafka 4.3) adds an incubating YashanDB source connector, the Docling AI SMT for document-to-structured-text conversion, a new Debezium CLI, and JDBC-sink pipeline builds in Debezium Platform.
+- [zendesk/maxwell](https://github.com/zendesk/maxwell) - Maxwell's daemon for MySQL CDC to Kafka (v1.45.0)
 - [alibaba/canal](https://github.com/alibaba/canal) - Alibaba MySQL binlog incremental subscription & consumption
 - [confluentinc/kafka-connect-jdbc](https://github.com/confluentinc/kafka-connect-jdbc) - Query-based CDC using incrementing/timestamp columns
-- [thake/logminer-kafka-connect](https://github.com/thake/logminer-kafka-connect) - Oracle CDC using LogMiner (no GoldenGate required)
+- ⚠️ [thake/logminer-kafka-connect](https://github.com/thake/logminer-kafka-connect) - Oracle CDC using LogMiner, no GoldenGate required (last real commit 2023; use Debezium's Oracle LogMiner connector for maintained LogMiner CDC)
 - ⚠️ [imanzano/GoldenGateConfluentKafkaConnector](https://github.com/imanzano/GoldenGateConfluentKafkaConnector) - Oracle GoldenGate Kafka Connect handler for Confluent (for GoldenGate versions prior to 12.3.1)
-- Oracle GoldenGate for Big Data - Official Kafka Connect Handler (commercial, included in GoldenGate 12.3.1+)
-- [jhc-systems/debezium-connector-ibmi](https://github.com/jhc-systems/debezium-connector-ibmi) - Debezium CDC connector for IBM i (AS/400) using journals
+- Oracle GoldenGate for Distributed Applications and Analytics (DAA) - Official Kafka Connect Handler (commercial; formerly "GoldenGate for Big Data", rebranded with the 23ai release)
+- [debezium/debezium-connector-ibmi](https://github.com/debezium/debezium-connector-ibmi) - Official (incubating) Debezium CDC connector for IBM i (AS/400) using journals, adopted into the Debezium org (supersedes jhc-systems/debezium-connector-ibmi)
 
 ---
 
@@ -346,7 +354,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 ### Snowflake
 
-- [snowflakedb/snowflake-kafka-connector](https://github.com/snowflakedb/snowflake-kafka-connector) - Official Snowflake Kafka Connector
+- [snowflakedb/snowflake-kafka-connector](https://github.com/snowflakedb/snowflake-kafka-connector) - Official Snowflake Kafka Connector (v4.x GA: Snowpipe Streaming rewrite with high-throughput exactly-once ingestion; v3 "classic" line deprecating)
 
 ### BigQuery
 
@@ -369,6 +377,10 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 - [Azure/kafka-sink-azure-kusto](https://github.com/Azure/kafka-sink-azure-kusto) - Azure Data Explorer sink connector
 
+### Microsoft Fabric
+
+- [microsoft/kafka-sink-ms-fabric](https://github.com/microsoft/kafka-sink-ms-fabric) - Official Kafka Connect sink to Microsoft Fabric, writing to Eventhouse (ADX/Kusto on Fabric); based on the Kusto sink
+
 ### Apache Pinot
 
 - ⚠️ [mhomaid/kafka-connect-apache-pinot](https://github.com/mhomaid/kafka-connect-apache-pinot) - Community sink connector for Apache Pinot
@@ -383,7 +395,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 ### Apache Doris
 
-- [apache/doris-kafka-connector](https://github.com/apache/doris-kafka-connector) - Official Apache Doris Kafka Connect sink connector
+- [apache/doris-kafka-connector](https://github.com/apache/doris-kafka-connector) - Official Apache Doris Kafka Connect sink connector (v26.0.0)
 
 ### Databend
 
@@ -408,8 +420,9 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 ### Apache Iceberg
 
-- [tabular-io/iceberg-kafka-connect](https://github.com/tabular-io/iceberg-kafka-connect) - Tabular's Iceberg Kafka Connect sink with exactly-once (KIP-447), dynamic routing, upsert mode, CDC mode with equality deletes. Supports REST, Glue, DynamoDB, Hadoop, Nessie, JDBC, Hive, BigQuery Metastore catalogs.
-- 📦 [getindata/kafka-connect-iceberg-sink](https://github.com/getindata/kafka-connect-iceberg-sink) - GetInData's Iceberg sink connector
+- [apache/iceberg (kafka-connect module)](https://github.com/apache/iceberg/tree/main/kafka-connect) - Canonical Iceberg Kafka Connect sink, upstreamed from Tabular into Apache Iceberg. Exactly-once (KIP-447), dynamic routing, upsert mode, CDC mode with equality deletes; REST, Glue, DynamoDB, Hadoop, Nessie, JDBC, Hive, BigQuery Metastore catalogs. Iceberg 1.11.0 adds VARIANT type support in the record converter. Docs: [iceberg.apache.org/docs/latest/kafka-connect](https://iceberg.apache.org/docs/latest/kafka-connect/)
+- 📦 [databricks/iceberg-kafka-connect](https://github.com/databricks/iceberg-kafka-connect) - The former Tabular repo (now under Databricks), deprecated in favor of the upstream Apache Iceberg module
+- 📦 [getindata/kafka-connect-iceberg-sink](https://github.com/getindata/kafka-connect-iceberg-sink) - GetInData's Iceberg sink connector (archived)
 
 ### Apache Hudi
 
@@ -419,6 +432,11 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 ### Delta Lake
 
 - [delta-io/delta](https://github.com/delta-io/delta) - Delta Lake with Spark Streaming Kafka integration
+- Note: no first-party OSS Kafka Connect sink exists. [delta-io/kafka-delta-ingest](https://github.com/delta-io/kafka-delta-ingest) is a standalone Rust daemon (not a Connect plugin); Confluent's Databricks Delta Lake Sink is proprietary.
+
+### DuckLake
+
+- [inyo-global/ducklake-kafka-connect](https://github.com/inyo-global/ducklake-kafka-connect) - Community Kafka Connect sink into DuckDB/DuckLake with Arrow IPC converter, auto table create/schema evolution, and MERGE-INTO upserts
 
 ---
 
@@ -457,7 +475,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 ### Qdrant
 
-- [qdrant/qdrant-kafka](https://github.com/qdrant/qdrant-kafka) - Official Qdrant sink connector supporting dense, sparse, and multi-vector configurations
+- [qdrant/qdrant-kafka](https://github.com/qdrant/qdrant-kafka) - Official Qdrant sink connector supporting dense, sparse, and multi-vector configurations (v1.4.0 adds tombstone-based point deletes and per-record collection override)
 
 ---
 
@@ -768,7 +786,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 ### IBM AS/400 (IBM i)
 
-- [jhc-systems/debezium-connector-ibmi](https://github.com/jhc-systems/debezium-connector-ibmi) - Debezium CDC connector for IBM i using journals
+- [debezium/debezium-connector-ibmi](https://github.com/debezium/debezium-connector-ibmi) - Official (incubating) Debezium CDC connector for IBM i using journals (adopted into the Debezium org from jhc-systems)
 - Infoview Systems infoConnect for Kafka (commercial) - Data queue source/sink and program call connectors
 
 ### TIBCO EMS
@@ -870,7 +888,8 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 - [Aiven-Open/transforms-for-apache-kafka-connect](https://github.com/Aiven-Open/transforms-for-apache-kafka-connect) - Aiven's collection of Single Message Transformations (SMTs)
 - [jcustenborder/kafka-connect-transform-common](https://github.com/jcustenborder/kafka-connect-transform-common) - Common transformations library
 - [jcustenborder/kafka-connect-transform-maxmind](https://github.com/jcustenborder/kafka-connect-transform-maxmind) - MaxMind GeoIP2 transform to enrich records with geolocation data
-- [Debezium FieldToEmbedding SMT](https://debezium.io/documentation/reference/stable/ai/embeddings.html) - Generates vector embeddings from record fields using Hugging Face, Ollama, or embedded ONNX models inline in the connector pipeline (Debezium AI module)
+- [Debezium FieldToEmbedding SMT](https://debezium.io/documentation/reference/stable/ai/embeddings.html) - Generates vector embeddings from record fields inline in the connector pipeline via LangChain4j, supporting embedded ONNX/MiniLM, Ollama, and any LangChain4j provider (OpenAI, Azure OpenAI, Amazon Bedrock, Voyage, etc.) (Debezium AI module)
+- [Debezium Docling SMT](https://debezium.io/documentation/reference/stable/ai/docling.html) - Converts text fields (or a document URL) in change events into a unified structured document (HTML/Markdown/plain text) via Docling Serve, for downstream indexing/embedding/RAG (Debezium 3.6 AI module)
 - [Debezium GeometryFormatTransformer](https://debezium.io/documentation/reference/stable/transformations/geometry-format-transformer.html) - Converts between WKB and EWKB geospatial formats for PostGIS/spatial CDC
 - [Debezium OpenLineage SMT](https://debezium.io/documentation/reference/stable/integrations/openlineage.html) - Automatic data lineage tracking for CDC pipelines via OpenLineage
 - [Confluent FromXML SMT](https://docs.confluent.io/cloud/current/connectors/transforms/fromxml.html) - Converts XML bytes/strings to strongly-typed Connect structs (GA on HTTP V2, IBM MQ Source)
@@ -942,7 +961,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 - ⚠️ [midhun1998/kafka-connect-kubernetes-events](https://github.com/midhun1998/kafka-connect-kubernetes-events) - Kubernetes events source connector
 - ⚠️ [AmadeusITGroup/Kubernetes-Kafka-Connect-Operator](https://github.com/AmadeusITGroup/Kubernetes-Kafka-Connect-Operator) - Kubernetes operator for deploying and auto-scaling Kafka Connect
-- [strimzi/strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) - CNCF Kubernetes operator with KafkaConnector CRD support
+- [strimzi/strimzi-kafka-operator](https://github.com/strimzi/strimzi-kafka-operator) - CNCF Kubernetes operator with KafkaConnector CRD support (v1.1.0 supports Kafka 4.3; since v1.0.0 only the `v1` CRD API is supported)
 
 ### HashiCorp Vault
 
@@ -965,7 +984,7 @@ See also: [awesome-kafka](https://github.com/conduktor/awesome-kafka) and [Kafka
 
 ### Lenses Stream Reactor
 
-- [lensesio/stream-reactor](https://github.com/lensesio/stream-reactor) - 30+ connectors covering S3/GCS/Azure storage, Cassandra/HBase/Kudu, Elasticsearch/Solr, InfluxDB, JMS/MQTT, FTP/SFTP, Redis, MongoDB, blockchain/IoT, and more. v11.0 ships Kafka 4.x support with new Cassandra and CosmosDB connectors.
+- [lensesio/stream-reactor](https://github.com/lensesio/stream-reactor) - 30+ connectors covering S3/GCS/Azure storage, Cassandra/HBase/Kudu, Elasticsearch/OpenSearch/Solr, InfluxDB, JMS/MQTT, FTP/SFTP, Redis, MongoDB, blockchain/IoT, and more. v12.x requires Apache Kafka 4.0+ and adds an OpenSearch sink; v11.7.x is the maintained Kafka 3.x/4.x line.
 
 ### Aiven Open Source
 
